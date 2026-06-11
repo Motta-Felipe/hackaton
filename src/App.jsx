@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Logo from "./Logo.jsx";
 import CreatePoll from "./pages/CreatePoll.jsx";
 import VotePage from "./pages/VotePage.jsx";
 import Results from "./pages/Results.jsx";
@@ -27,9 +28,10 @@ export default function App() {
     <div className="shell">
       <header className="masthead">
         <a href="#/" className="brand">
-          Quando<span className="brand-mark">?</span>
+          <Logo className="brand-logo" />
+          Quadra<span className="brand-mark">.</span>
         </a>
-        <span className="tagline">trova l'ora giusta, senza ping-pong</span>
+        <span className="tagline">l'ora che mette tutti d'accordo</span>
       </header>
       {route.page === "create" && <CreatePoll />}
       {route.page === "vote" && <VotePage pollId={route.pollId} />}

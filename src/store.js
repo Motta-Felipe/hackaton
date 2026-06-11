@@ -3,7 +3,7 @@
 //          Slot { id, datetime, location? }
 //          Vote { id, name, slotIds[] }
 
-const KEY = "quando.polls";
+const KEY = "quadra.polls";
 
 export function loadPolls() {
   try {

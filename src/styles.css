@@ -43,12 +43,23 @@ body {
 }
 
 .brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
   font-family: "Fraunces", serif;
   font-weight: 900;
   font-size: 2rem;
   color: var(--ink);
   text-decoration: none;
   letter-spacing: -0.02em;
+}
+
+.brand-logo {
+  transition: transform 0.2s cubic-bezier(0.2, 0.9, 0.3, 1);
+}
+
+.brand:hover .brand-logo {
+  transform: rotate(-8deg) scale(1.06);
 }
 
 .brand-mark {

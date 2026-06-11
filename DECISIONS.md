@@ -29,6 +29,14 @@ Aggiungi una voce solo per decisioni non ovvie (stack, dipendenze, trade-off, ta
 - **Consequences:** ~5 min di scaffolding/install ma componenti riusabili e demo via `npm run dev`. Link condivisibile solo sullo stesso browser/macchina (accettabile, vedi Risks in SPEC).
 - **Alternatives considered:** HTML+JS vanilla (zero setup ma UI più lenta da comporre); Node/Express in-memory (multi-device vero ma è P2, costo troppo alto ora).
 
+### Nome e identità: "Quadra"
+- **Status:** Accepted
+- **Date:** 2026-06-11
+- **Context:** Serviva un nome memorabile per la demo, al posto del provvisorio "Quando?".
+- **Decision:** L'app si chiama **Quadra** (da "trovare la quadra"): logo SVG con due tessere-calendario sovrapposte e spunta su quella scelta, riusato come favicon.
+- **Consequences:** Brand coerente con il tema carta-e-inchiostro; la chiave `localStorage` è rinominata in `quadra.polls` (i dati di test sulla vecchia chiave vengono ignorati, il sondaggio demo si ri-seeda da solo).
+- **Alternatives considered:** "Quando?" (descrittivo ma generico); "Slotto" (giocoso ma meno chiaro); "Incastro" (lungo, suona negativo).
+
 ---
 
 ## Esempi
