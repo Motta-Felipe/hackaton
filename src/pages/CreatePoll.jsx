@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { savePoll, uid } from "../store.js";
 
-const emptySlot = () => ({ key: uid(), datetime: "", location: "" });
+const emptySlot = () => ({ key: uid(), datetime: "", end: "", location: "" });
 
 export default function CreatePoll() {
   const [title, setTitle] = useState("");
@@ -20,12 +20,17 @@ export default function CreatePoll() {
     const valid = slots.filter((s) => s.datetime);
     if (!title.trim()) return setError("Dai un titolo alla riunione.");
     if (valid.length < 2) return setError("Servono almeno 2 slot con data e ora.");
+    if (valid.some((s) => !s.end))
+      return setError("Indica anche l'ora di fine per ogni slot.");
+    if (valid.some((s) => s.end <= s.datetime.slice(11, 16)))
+      return setError("L'ora di fine deve essere dopo l'inizio.");
     const poll = {
       id: uid(),
       title: title.trim(),
       slots: valid.map((s) => ({
         id: uid(),
         datetime: s.datetime,
+        end: s.datetime.slice(0, 10) + "T" + s.end,
         location: s.location.trim() || null,
       })),
       votes: [],
@@ -93,7 +98,15 @@ export default function CreatePoll() {
               <input
                 type="datetime-local"
                 value={s.datetime}
+                aria-label="Inizio"
                 onChange={(e) => updateSlot(s.key, "datetime", e.target.value)}
+              />
+              <input
+                type="time"
+                value={s.end}
+                aria-label="Fine"
+                title="Ora di fine"
+                onChange={(e) => updateSlot(s.key, "end", e.target.value)}
               />
               <input
                 type="text"

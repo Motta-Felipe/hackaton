@@ -62,7 +62,7 @@ export default function VotePage({ pollId }) {
                   onChange={() => toggle(s.id)}
                 />
                 <span className="tick" aria-hidden="true" />
-                <span className="ticket-when">{formatSlot(s.datetime)}</span>
+                <span className="ticket-when">{formatSlot(s.datetime, s.end)}</span>
                 {s.location && <span className="ticket-where">{s.location}</span>}
               </label>
             </li>

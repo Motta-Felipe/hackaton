@@ -31,6 +31,7 @@ Kanban leggero. Sposta i task tra le sezioni man mano che procedi. Tieni un solo
 - [x] `P0` Selezione slot vincente in `Results.jsx` (toggle "Scegli questo" + badge "★ Slot scelto" + card evidenziata)
 - [x] `P1` Stile: tema "carta e inchiostro" (Fraunces + Outfit, accento vermiglio), animazioni di reveal, responsive
 - [x] `P1` Seed: sondaggio demo `#/poll/demo` ("Retrospettiva di team", 3 slot, 2 voti: Giulia e Marco)
+- [x] `P1` Periodo slot: ora di fine (`Slot.end`, stesso giorno) in form, voto, risultati e seed; fallback per poll senza fine
 - [x] Verifica end-to-end nel browser: crea → link → vota → risultati → slot vincente (tutti gli acceptance criteria passano)
 
 ## Blocked

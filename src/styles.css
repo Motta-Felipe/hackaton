@@ -150,7 +150,8 @@ body {
 }
 
 input[type="text"],
-input[type="datetime-local"] {
+input[type="datetime-local"],
+input[type="time"] {
   width: 100%;
   font: inherit;
   color: var(--ink);
@@ -162,7 +163,8 @@ input[type="datetime-local"] {
 }
 
 input[type="text"]:focus,
-input[type="datetime-local"]:focus {
+input[type="datetime-local"]:focus,
+input[type="time"]:focus {
   outline: none;
   box-shadow: 3px 3px 0 var(--accent);
   transform: translate(-1px, -1px);
@@ -178,7 +180,7 @@ input[type="datetime-local"]:focus {
 
 .slot-edit {
   display: grid;
-  grid-template-columns: auto 1fr 1fr auto;
+  grid-template-columns: auto 1.3fr minmax(96px, auto) 1fr auto;
   gap: 8px;
   align-items: center;
 }
@@ -471,10 +473,18 @@ input[type="datetime-local"]:focus {
   }
 
   .slot-edit {
-    grid-template-columns: auto 1fr auto;
+    grid-template-columns: auto 1fr 1fr auto;
+  }
+
+  .slot-edit input[type="datetime-local"] {
+    grid-column: 2 / 5;
+  }
+
+  .slot-edit input[type="time"] {
+    grid-column: 2 / 3;
   }
 
   .slot-edit input[type="text"] {
-    grid-column: 2 / 3;
+    grid-column: 3 / 4;
   }
 }

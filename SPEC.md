@@ -72,7 +72,7 @@ Tempo totale ~1h30 (5 min intro · 45 min sviluppo · 40 min condivisione). Focu
 *Quali entità/dati servono? Campi minimi indispensabili.*
 
 - `Poll { id, title, slots[], createdAt }`
-- `Slot { id, datetime, location? }`
+- `Slot { id, datetime, end, location? }` (inizio e fine nello stesso giorno)
 - `Vote { pollId, slotId, participantName }`
 - `winningSlotId` sul Poll (impostato dall'autore).
 

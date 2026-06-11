@@ -49,7 +49,7 @@ export default function Results({ pollId }) {
                 {isWinner && <span className="winner-badge">★ Slot scelto</span>}
                 <div className="result-head">
                   <div>
-                    <span className="ticket-when">{formatSlot(s.datetime)}</span>
+                    <span className="ticket-when">{formatSlot(s.datetime, s.end)}</span>
                     {s.location && <span className="ticket-where">{s.location}</span>}
                   </div>
                   <span className="count">
