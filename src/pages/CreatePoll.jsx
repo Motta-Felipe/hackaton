@@ -36,6 +36,7 @@ export default function CreatePoll() {
       votes: [],
       winningSlotId: null,
       createdAt: new Date().toISOString(),
+      closedAt: null,
     };
     savePoll(poll);
     setCreatedId(poll.id);

@@ -18,6 +18,19 @@ export default function VotePage({ pollId }) {
     );
   }
 
+  if (poll.closedAt) {
+    return (
+      <main className="card reveal">
+        <p className="kicker">Sondaggio chiuso</p>
+        <h1 className="display">{poll.title}</h1>
+        <p className="lede">Questo sondaggio non accetta più voti.</p>
+        <a className="btn btn-accent" href={`#/poll/${pollId}/results`}>
+          Vedi i risultati →
+        </a>
+      </main>
+    );
+  }
+
   const toggle = (slotId) =>
     setPicked((prev) => {
       const next = new Set(prev);
@@ -30,6 +43,8 @@ export default function VotePage({ pollId }) {
     if (!name.trim()) return setError("Scrivi il tuo nome.");
     if (picked.size === 0) return setError("Seleziona almeno uno slot.");
     const fresh = getPoll(pollId);
+    if (fresh.closedAt)
+      return setError("Il sondaggio è stato chiuso nel frattempo.");
     fresh.votes.push({ id: uid(), name: name.trim(), slotIds: [...picked] });
     savePoll(fresh);
     window.location.hash = `#/poll/${pollId}/results`;

@@ -3,13 +3,16 @@ import Logo from "./Logo.jsx";
 import CreatePoll from "./pages/CreatePoll.jsx";
 import VotePage from "./pages/VotePage.jsx";
 import Results from "./pages/Results.jsx";
+import AdminPage from "./pages/AdminPage.jsx";
 
 // Routing minimale via location.hash (DECISIONS.md: niente react-router).
 //   #/                  → crea sondaggio
 //   #/poll/:id          → pagina di voto
 //   #/poll/:id/results  → risultati
+//   #/admin             → pannello admin (tutti i sondaggi)
 function parseRoute() {
   const hash = window.location.hash || "#/";
+  if (hash.startsWith("#/admin")) return { page: "admin", pollId: null };
   const m = hash.match(/^#\/poll\/([^/]+)(\/results)?/);
   if (m) return { page: m[2] ? "results" : "vote", pollId: m[1] };
   return { page: "create", pollId: null };
@@ -36,7 +39,10 @@ export default function App() {
       {route.page === "create" && <CreatePoll />}
       {route.page === "vote" && <VotePage pollId={route.pollId} />}
       {route.page === "results" && <Results pollId={route.pollId} />}
-      <footer className="colophon">Hackathon Agentico · demo locale</footer>
+      {route.page === "admin" && <AdminPage />}
+      <footer className="colophon">
+        Hackathon Agentico · demo locale · <a href="#/admin">admin</a>
+      </footer>
     </div>
   );
 }

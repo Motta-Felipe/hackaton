@@ -1,5 +1,6 @@
 // Persistenza minima su localStorage (vedi DECISIONS.md: niente backend).
-// Modello: Poll { id, title, slots[], votes[], winningSlotId, createdAt }
+// Modello: Poll { id, title, slots[], votes[], winningSlotId, createdAt, closedAt }
+//          closedAt: ISO string se il sondaggio è chiuso (niente nuovi voti), altrimenti null/assente
 //          Slot { id, datetime, end, location? } — end nello stesso giorno di datetime
 //          Vote { id, name, slotIds[] }
 

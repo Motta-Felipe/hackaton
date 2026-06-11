@@ -33,6 +33,7 @@ Kanban leggero. Sposta i task tra le sezioni man mano che procedi. Tieni un solo
 - [x] `P1` Seed: sondaggio demo `#/poll/demo` ("Retrospettiva di team", 3 slot, 2 voti: Giulia e Marco)
 - [x] `P1` Periodo slot: ora di fine (`Slot.end`, stesso giorno) in form, voto, risultati e seed; fallback per poll senza fine
 - [x] `P2` Generazione invito calendario `.ics` e link `mailto:` simulati dallo slot vincente
+- [x] `P1` Pannello admin `#/admin`: elenco di tutti i sondaggi (voti, slot, vincitore) + chiudi/riapri sondaggio (`Poll.closedAt`, voto bloccato sui chiusi)
 - [x] Verifica end-to-end nel browser: crea → link → vota → risultati → slot vincente (tutti gli acceptance criteria passano)
 
 ## Blocked

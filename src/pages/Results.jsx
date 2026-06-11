@@ -42,6 +42,10 @@ export default function Results({ pollId }) {
           : `${poll.votes.length} ${poll.votes.length === 1 ? "persona ha" : "persone hanno"} votato.`}
       </p>
 
+      {poll.closedAt && (
+        <p className="notice">Sondaggio chiuso: non accetta più voti.</p>
+      )}
+
       <ul className="slot-list">
         {poll.slots.map((s, i) => {
           const voters = votersFor(s.id);

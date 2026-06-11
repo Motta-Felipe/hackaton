@@ -45,6 +45,14 @@ Aggiungi una voce solo per decisioni non ovvie (stack, dipendenze, trade-off, ta
 - **Consequences:** Nessuna chiave o dipendenza esterna; l'invio resta simulato e dipende dal client email dell'utente.
 - **Alternatives considered:** Integrazione Google/Outlook Calendar (troppo scope e richiede auth/API); durata fissa 60 minuti (superata perché ora lo slot ha anche `end`).
 
+### Pannello admin senza autenticazione
+- **Status:** Accepted
+- **Date:** 2026-06-11
+- **Context:** Serviva una vista d'insieme dei sondaggi e un modo per chiuderli; l'auth resta vietata dalle regole dell'hackathon.
+- **Decision:** Pagina `#/admin` aperta a chiunque: elenca tutti i sondaggi del browser e permette di chiudere/riaprire (`Poll.closedAt`); un sondaggio chiuso non accetta voti ma i risultati restano visibili.
+- **Consequences:** Zero costo di auth, comoda in demo (link nel footer); chiunque apra l'URL può chiudere sondaggi (accettabile: demo locale, dati in `localStorage`).
+- **Alternatives considered:** Token autore in `localStorage` (più "vero" ma più codice, non richiesto); eliminare i sondaggi invece di chiuderli (distruttivo, la chiusura è reversibile).
+
 ---
 
 ## Esempi
