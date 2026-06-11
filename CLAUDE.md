@@ -2,6 +2,8 @@
 
 File di memoria canonico caricato automaticamente da Claude Code in questa repo.
 
+**Progetto:** Hackathon Agentico — app di sondaggio per accordarsi sulle riunioni (stile Doodle / Calendly). ~45 min di sviluppo, MVP-first. Dettagli in @SPEC.md.
+
 Le regole operative complete (plan-first, guardrails, checklist demo) sono in @AGENTS.md.
 
 La **memoria condivisa** del progetto — tienila sempre aggiornata e allineata:

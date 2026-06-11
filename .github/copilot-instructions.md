@@ -3,7 +3,9 @@
 Istruzioni per GitHub Copilot in questa repo. Per la guida completa vedi [AGENTS.md](../AGENTS.md).
 
 ## Project purpose
-Mini-app costruita durante un hackathon di poche ore. Brief non ancora noto. Principio guida: **MVP-first** — demo funzionante il prima possibile, niente overengineering.
+**Hackathon Agentico** — app di sondaggio per accordarsi sulle riunioni (stile Doodle / Calendly): crea un sondaggio con slot temporali, condividi un link, ognuno vota, l'autore sceglie lo slot. Dettagli in `SPEC.md`. Tempo: ~45 min di sviluppo. Principio: **MVP-first** — demo funzionante il prima possibile, niente overengineering.
+
+**Da evitare (regole hackathon):** backend complessi, auth avanzata, microservizi, deployment enterprise. La valutazione pesa anche **uso di AI + UI** e **il COME** (metodo).
 
 ## Preferred workflow
 1. **Plan first**: prima di modifiche ampie, proponi un piano breve (3-6 punti).

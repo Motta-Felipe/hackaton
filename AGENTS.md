@@ -4,10 +4,14 @@ Guida operativa per agenti AI (Claude Code, Codex, GitHub Copilot) che lavorano 
 
 ## Scopo della repo
 
-Questa repo è uno scaffolding leggero per costruire **una mini-app durante un hackathon di poche ore**.
-Il brief non è ancora noto: la struttura è volutamente generica e va adattata appena arriva.
+Questa repo serve a costruire la mini-app dell'**Hackathon Agentico**: un'**app di sondaggio per accordarsi sulle riunioni** (stile Doodle / Calendly). Vedi [SPEC.md](SPEC.md) per il dettaglio.
 
-Il principio guida è **MVP-first**: l'obiettivo è una demo funzionante il prima possibile, riducendo rischio e overengineering.
+**Vincoli del brief:**
+- Tempo molto stretto: ~1h30 totali (5 min intro · **45 min sviluppo** · 40 min condivisione). Demo finale 3 min/team.
+- **Da evitare** (regole): backend complessi, auth avanzata, microservizi, deployment enterprise.
+- **Conta soprattutto il COME**: quali tool e metodologie con AI avete usato. La valutazione pesa: funzionamento dell'MVP, uso di AI e della UI, originalità, demo finale.
+
+Il principio guida è **MVP-first**: una demo funzionante il prima possibile, riducendo rischio e overengineering. Con soli 45 minuti di sviluppo, taglia tutto ciò che non serve all'happy path.
 
 ## Come lavorare qui dentro
 

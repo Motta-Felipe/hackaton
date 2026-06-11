@@ -1,6 +1,9 @@
-# Hackathon Starter Kit
+# Hackathon Agentico — App sondaggio riunioni
 
-Scaffolding leggero per costruire una mini-app durante un hackathon, lavorando con agenti AI (Claude Code, Codex, GitHub Copilot).
+Mini-app per accordarsi sull'orario di una riunione (stile Doodle / Calendly), costruita con agenti AI (Claude Code, Codex, GitHub Copilot).
+Crea un sondaggio con più slot, condividi un link, ognuno vota, l'autore sceglie lo slot finale. Dettagli in [SPEC.md](SPEC.md).
+
+Vincoli: ~45 min di sviluppo · niente backend complessi / auth avanzata / microservizi / deployment enterprise · valutazione anche su uso di AI, UI e metodo.
 Principio guida: **MVP-first** — demo funzionante il prima possibile, niente overengineering.
 
 ## Cosa c'è qui
@@ -27,17 +30,17 @@ Principio guida: **MVP-first** — demo funzionante il prima possibile, niente o
 7. **Prepara la demo** con [prompts/demo.md](prompts/demo.md), curando anche il racconto del metodo.
 8. **Annota** lungo il percorso ogni scelta non ovvia in `DECISIONS.md`.
 
-## Time-box (esempio su ~6 ore — scala le proporzioni al tuo tempo)
+## Time-box (~45 min di sviluppo — il tempo è pochissimo)
 
 | Fase | Tempo | Cosa |
 | ---- | ----- | ---- |
-| Plan | ~10% | brief → planner → `SPEC.md` + `TASKS.md` + critical path |
-| Build core | ~50% | solo i `P0` del critical path, un task alla volta |
-| Integrate & review | ~20% | reviewer + tester sull'happy path |
+| Plan | ~5 min | brief → planner → `SPEC.md` + `TASKS.md` + critical path |
+| Build core | ~25 min | solo i `P0` del critical path, un task alla volta |
+| Review & test | ~7 min | reviewer + tester sull'happy path |
 | **Code freeze** | — | stop alle nuove feature: da qui solo fix che servono alla demo |
-| Demo prep | ~20% | script demo, dati pre-caricati, prove, piano anti-disastro |
+| Demo prep | ~8 min | script demo, dati pre-caricati, prove, piano anti-disastro |
 
-**Regola d'oro:** il *code freeze* scatta quando resta circa **⅓ del tempo**. Dopo quel punto non si aggiungono funzionalità: si stabilizza e si prova la demo. Finire una cosa che funziona batte iniziarne tre a metà.
+**Regola d'oro:** con così poco tempo, il *code freeze* scatta quando resta circa **⅓ del tempo**. Dopo quel punto non si aggiungono funzionalità: si stabilizza e si prova la demo. Finire una cosa che funziona batte iniziarne tre a metà.
 
 ## AI Workflow
 
