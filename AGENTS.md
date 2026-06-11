@@ -43,6 +43,7 @@ Se queste informazioni non sono in [SPEC.md](SPEC.md), chiedile o proponi una bo
 - **No dipendenze premature**: aggiungi una libreria solo se risolve un problema reale e attuale. Annota il perché in [DECISIONS.md](DECISIONS.md).
 - **Codice in inglese** (nomi, commenti tecnici); documentazione di progetto in italiano dove utile.
 - **Commit piccoli** con messaggi chiari che descrivono il cambiamento.
+- **Segreti fuori dal repo**: le chiavi vanno in `.env` (mai committato, è in `.gitignore`); documenta le variabili in [.env.example](.env.example). Mai hardcodare chiavi nel codice.
 
 ## Ruoli dei file
 
@@ -61,6 +62,8 @@ Se queste informazioni non sono in [SPEC.md](SPEC.md), chiedile o proponi una bo
 - ❌ Non espandere lo scope oltre l'MVP concordato (no scope creep).
 - ❌ Non inventare requisiti o dati: se manca un'informazione, chiedi o segnala l'assunzione.
 - ❌ Non lasciare il lavoro a metà senza aggiornare `TASKS.md`.
+- ❌ Non committare segreti reali (`.env`, chiavi API, token): usa [.env.example](.env.example) e dati fittizi per la demo.
+- ❌ Dopo il **code freeze** (≈ ⅓ di tempo rimasto) non aggiungere nuove feature: solo fix che servono alla demo.
 - ✅ Preferisci sempre il percorso che porta più in fretta a una demo mostrabile.
 - ✅ Rendi ogni modifica piccola e facile da rivedere.
 - ✅ Quando passi il lavoro a un altro agente, usa [prompts/handoff.md](prompts/handoff.md).
@@ -71,6 +74,8 @@ Se queste informazioni non sono in [SPEC.md](SPEC.md), chiedile o proponi una bo
 - [ ] Il flusso principale dell'MVP funziona end-to-end.
 - [ ] Nessun crash sul percorso di demo (happy path testato).
 - [ ] I dati/credenziali di demo sono pronti e non segreti reali.
+- [ ] Nessun segreto reale committato (`.env` ignorato, solo `.env.example` versionato).
+- [ ] Code freeze rispettato: dopo l'ultimo ⅓ di tempo solo stabilizzazione e prove demo.
 - [ ] `SPEC.md` riflette ciò che è stato effettivamente costruito.
 - [ ] `DECISIONS.md` contiene le scelte chiave.
 - [ ] Esiste uno script o sequenza di demo (vedi [prompts/demo.md](prompts/demo.md)).

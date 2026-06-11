@@ -1,0 +1,33 @@
+# Secrets & environment — MAI committare segreti reali
+.env
+.env.*
+!.env.example
+
+# Node
+node_modules/
+dist/
+build/
+*.log
+npm-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+
+# Build / cache / coverage
+.cache/
+.next/
+.output/
+coverage/
+
+# Editor / OS
+.idea/
+*.swp
+.DS_Store
+Thumbs.db

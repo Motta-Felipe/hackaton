@@ -27,6 +27,7 @@ Mini-app costruita durante un hackathon di poche ore. Brief non ancora noto. Pri
 - Tocca il minor numero di file possibile; non rifattorizzare codice non collegato.
 - **Non riscrivere l'architettura** né introdurre dipendenze senza un motivo chiaro (e annotalo in `DECISIONS.md`).
 - Niente scope creep: resta dentro l'MVP concordato.
+- **Segreti fuori dal repo**: chiavi e token in `.env` (mai committato); documenta le variabili in `.env.example`. Niente segreti hardcodati.
 
 ## Test / review expectations
 - Garantisci che il flusso principale funzioni end-to-end (happy path).

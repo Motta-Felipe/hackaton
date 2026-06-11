@@ -7,11 +7,13 @@ Principio guida: **MVP-first** — demo funzionante il prima possibile, niente o
 
 | File | A cosa serve |
 |------|--------------|
+| [CLAUDE.md](CLAUDE.md) | Memoria canonica caricata da Claude Code (importa `AGENTS.md` e i file condivisi) |
 | [AGENTS.md](AGENTS.md) | Regole operative complete per gli agenti AI (plan-first, guardrails, checklist demo) |
 | [.github/copilot-instructions.md](.github/copilot-instructions.md) | Versione sintetica per GitHub Copilot |
 | [SPEC.md](SPEC.md) | Template di specifica da compilare appena arriva il brief |
 | [TASKS.md](TASKS.md) | Kanban dei task + priorità + critical path |
 | [DECISIONS.md](DECISIONS.md) | Log delle decisioni (per non ridiscuterle) |
+| [.env.example](.env.example) | Template variabili d'ambiente; copia in `.env` (mai committato) |
 | [prompts/](prompts/) | Prompt pronti: planner, builder, reviewer, tester, demo, handoff |
 
 ## Come usarlo: dal brief alla demo
@@ -24,6 +26,18 @@ Principio guida: **MVP-first** — demo funzionante il prima possibile, niente o
 6. **Testa** il percorso di demo con [prompts/tester.md](prompts/tester.md).
 7. **Prepara la demo** con [prompts/demo.md](prompts/demo.md), curando anche il racconto del metodo.
 8. **Annota** lungo il percorso ogni scelta non ovvia in `DECISIONS.md`.
+
+## Time-box (esempio su ~6 ore — scala le proporzioni al tuo tempo)
+
+| Fase | Tempo | Cosa |
+| ---- | ----- | ---- |
+| Plan | ~10% | brief → planner → `SPEC.md` + `TASKS.md` + critical path |
+| Build core | ~50% | solo i `P0` del critical path, un task alla volta |
+| Integrate & review | ~20% | reviewer + tester sull'happy path |
+| **Code freeze** | — | stop alle nuove feature: da qui solo fix che servono alla demo |
+| Demo prep | ~20% | script demo, dati pre-caricati, prove, piano anti-disastro |
+
+**Regola d'oro:** il *code freeze* scatta quando resta circa **⅓ del tempo**. Dopo quel punto non si aggiungono funzionalità: si stabilizza e si prova la demo. Finire una cosa che funziona batte iniziarne tre a metà.
 
 ## AI Workflow
 
