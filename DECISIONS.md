@@ -37,6 +37,14 @@ Aggiungi una voce solo per decisioni non ovvie (stack, dipendenze, trade-off, ta
 - **Consequences:** Brand coerente con il tema carta-e-inchiostro; la chiave `localStorage` è rinominata in `quadra.polls` (i dati di test sulla vecchia chiave vengono ignorati, il sondaggio demo si ri-seeda da solo).
 - **Alternatives considered:** "Quando?" (descrittivo ma generico); "Slotto" (giocoso ma meno chiaro); "Incastro" (lungo, suona negativo).
 
+### Invito calendario simulato lato client
+- **Status:** Accepted
+- **Date:** 2026-06-11
+- **Context:** Dopo la scelta dello slot vincente serve una chiusura demo più realistica, senza backend o servizi email/calendario.
+- **Decision:** Generiamo lato browser un file `.ics` e un link `mailto:` usando inizio/fine dello slot vincente.
+- **Consequences:** Nessuna chiave o dipendenza esterna; l'invio resta simulato e dipende dal client email dell'utente.
+- **Alternatives considered:** Integrazione Google/Outlook Calendar (troppo scope e richiede auth/API); durata fissa 60 minuti (superata perché ora lo slot ha anche `end`).
+
 ---
 
 ## Esempi

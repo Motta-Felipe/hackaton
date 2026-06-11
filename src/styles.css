@@ -466,6 +466,27 @@ input[type="time"]:focus {
   font-size: 0.92rem;
 }
 
+.invite-panel {
+  border-top: 2px dashed var(--line);
+  margin-top: 20px;
+  padding-top: 22px;
+}
+
+.invite-panel h2 {
+  font-family: "Fraunces", serif;
+  font-size: 1.35rem;
+  margin: 0 0 8px;
+}
+
+.invite-copy {
+  color: var(--ink-soft);
+  margin: 0 0 12px;
+}
+
+.invite-actions {
+  margin-bottom: 0;
+}
+
 /* ——— mobile ——— */
 @media (max-width: 560px) {
   .card {

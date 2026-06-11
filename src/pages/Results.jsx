@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { getPoll, savePoll, formatSlot } from "../store.js";
+import { buildIcs, buildMailto, downloadIcs } from "../calendar.js";
 
 export default function Results({ pollId }) {
   const [poll, setPoll] = useState(() => getPoll(pollId));
@@ -28,6 +29,8 @@ export default function Results({ pollId }) {
   };
 
   const link = `${window.location.origin}${window.location.pathname}#/poll/${pollId}`;
+  const winningSlot = poll.slots.find((s) => s.id === poll.winningSlotId);
+  const mailto = winningSlot ? buildMailto(poll, winningSlot, link) : "";
 
   return (
     <main className="card reveal">
@@ -79,6 +82,30 @@ export default function Results({ pollId }) {
           );
         })}
       </ul>
+
+      {winningSlot && (
+        <section className="invite-panel pop">
+          <p className="kicker">Invito</p>
+          <h2>Finalizza la riunione</h2>
+          <p className="invite-copy">
+            Slot scelto: <strong>{formatSlot(winningSlot.datetime, winningSlot.end)}</strong>
+            {winningSlot.location ? ` - ${winningSlot.location}` : ""}
+          </p>
+          <div className="linkbox invite-actions">
+            <button
+              className="btn btn-accent"
+              onClick={() =>
+                downloadIcs("quadra-invito.ics", buildIcs(poll, winningSlot, link))
+              }
+            >
+              Scarica .ics
+            </button>
+            <a className="btn btn-ink" href={mailto}>
+              Prepara email
+            </a>
+          </div>
+        </section>
+      )}
 
       <div className="row between">
         <a className="btn btn-ghost" href={`#/poll/${pollId}`}>
