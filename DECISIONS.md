@@ -19,6 +19,18 @@ Aggiungi una voce solo per decisioni non ovvie (stack, dipendenze, trade-off, ta
 
 ---
 
+## Decisioni
+
+### Stack: Vite + React, niente backend
+- **Status:** Accepted
+- **Date:** 2026-06-11
+- **Context:** ~45 min di sviluppo; serve uno stack su cui il team è fluente, con UI componibile in fretta.
+- **Decision:** SPA con Vite + React (template `react`). Stato persistito in `localStorage`, routing via `location.hash` (`#/poll/:id`) senza react-router.
+- **Consequences:** ~5 min di scaffolding/install ma componenti riusabili e demo via `npm run dev`. Link condivisibile solo sullo stesso browser/macchina (accettabile, vedi Risks in SPEC).
+- **Alternatives considered:** HTML+JS vanilla (zero setup ma UI più lenta da comporre); Node/Express in-memory (multi-device vero ma è P2, costo troppo alto ora).
+
+---
+
 ## Esempi
 
 ### Usare SQLite invece di un DB gestito
